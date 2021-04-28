@@ -53,9 +53,7 @@ function primeNumber(n) {
     }
     let flag = true;
     for (let i = n - 1; i > 1; i--) {
-        if (n % i !== 0) {
-            flag = true;
-        } else {
+        if (n % i === 0) {
             flag = false;
             break;
         }
@@ -64,24 +62,22 @@ function primeNumber(n) {
     return flag;
 }
 
-console.log(primeNumber(3));
+console.log(primeNumber(17));
 
 //isSorted
 
 function isSorted(arr){
-    let flag = true;
     for(let j = 0; j < arr.length; j++){
         for(let i = j; i < arr.length; i++){
-            if(arr[j] <= arr[i]){
-                flag = true;
-            }else {
+            if(arr[i] < arr[j]){
                 return false;
             }
         }
     }
-    return flag;
+    return true;
 }
-console.log(isSorted([-Infinity, null, 1, 3, 4, 5, 6]))
+console.log(isSorted([-Infinity, null, 1, 3, 4, 5, 6]));
+console.log(isSorted([-Infinity, null, 1, 3, 4, 5, 1]));
 
 //Polindrom
 
