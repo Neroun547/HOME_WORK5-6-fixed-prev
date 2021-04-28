@@ -13,8 +13,15 @@ for(let i = 0; i < wrapperBtn.length; i++){
     wrapperBtn[i].style.top = posY;
 }
 
-for (let i = 0; i < btn.length; i++) {
+for (let i = 0; i < btn.length; i++) { 
     btn[i].addEventListener('click', function () {
+        for(let j = 0; j < wrapperBtn.length; j++){
+            if(i === j){
+                wrapperBtn[i].style.zIndex = '1000';
+            } else {
+                wrapperBtn[j].style.zIndex = '0';
+            }
+        }  
         let flag = false;
         let select = false;
         select = true;
